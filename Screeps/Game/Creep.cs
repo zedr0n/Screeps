@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bridge;
 
 namespace Screeps.Bridge
 {
+    [Ignore]
     public class Creep
     {
         public sealed class Property
@@ -31,6 +33,14 @@ namespace Screeps.Bridge
 
         public class Spec
         {
+            public Spec(Property[] props)
+            {
+                foreach (Property prop in props)
+                {
+                    spec.Add(prop);
+                }
+            }
+
             public Property this[int i]
             {
                 get { return spec[i]; }

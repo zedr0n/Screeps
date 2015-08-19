@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bridge;
 
 namespace Screeps.Bridge
 {
-    class Spawns
+    [Ignore]
+    public class Spawns
     {
         private string basePrefix = "";
 
@@ -19,7 +21,7 @@ namespace Screeps.Bridge
         
         public string prefix()
         {
-            return basePrefix + "spawns.";
+            return basePrefix + ".spawns";
         }
 
         public new Spawn this[string name]
@@ -30,6 +32,11 @@ namespace Screeps.Bridge
             set {
                 spawns[name] = value;
             }
+        }
+
+        public IEnumerator<Spawn> GetEnumerator()
+        {
+            return spawns.Values.GetEnumerator();
         }
 
         // internally represent by a dictionary
