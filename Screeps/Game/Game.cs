@@ -7,7 +7,6 @@ using Bridge;
 
 namespace Screeps.Bridge
 {
-    [Ignore]
     class Game
     {
         public Spawns spawns = new Spawns(prefix);
