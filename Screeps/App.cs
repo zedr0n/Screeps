@@ -23,6 +23,8 @@ namespace Screeps
             }
 
             game.spawns["Spawn1"].createCreep(spec, "creep1");
+
+            // test Pivotal tracker integration completed
         }
     }
 }
